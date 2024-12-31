@@ -1,0 +1,29 @@
+# Нужно написать программу, которая конкурентно получит данные
+# с двух источников.
+# Для этого желательно использовать aiohttp.
+# url_1 = "https://www.wikipedia.org/"
+# url_2 = "https://www.google.com"
+
+import asyncio
+import aiohttp
+
+
+async def fetch_url(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            return await response.text()
+
+
+async def main():
+    url_1 = "https://www.wikipedia.org/"
+    url_2 = "https://www.google.com"
+    task1 = asyncio.create_task(fetch_url(url_1))
+    task2 = asyncio.create_task(fetch_url(url_2))
+    # запуск задач
+    data1 = await task1
+    data2 = await task2
+    print("Data from ", url_1, data1, "bytes")
+    print("Data from ", url_2, data2, "bytes")
+
+
+asyncio.run(main())
