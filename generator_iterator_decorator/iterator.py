@@ -32,3 +32,6 @@ my_iter = MyIterator(1, 5)
 # Перебор значений с помощью next()
 for val in my_iter:
     print(val)
+
+
+

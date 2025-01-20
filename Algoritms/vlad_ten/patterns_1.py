@@ -3,26 +3,14 @@ from typing import List
 
 # 217. Contains Duplicate
 
-
 def containsDuplicate(nums:  List[int]) -> bool:
-    seen = set([])
-    for i in nums:
-        if i in seen:
-            return True
-        seen.add(i)
-    return False
-
-    # if len(nums) == len(set(nums)):
-    #     return False
-    # return True
-
+    return len(set(nums)) < len(nums)
 
 
 # a = [1,2,3,1]   # True
 # b = [1,2,3,4]   # False
 # print(containsDuplicate(a))
 # print(containsDuplicate(b))
-
 
 
 # 268. Missing Number
