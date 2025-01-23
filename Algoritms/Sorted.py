@@ -66,8 +66,8 @@ def bubble_sort(lst: list):
 
 
 # print(tim_sort(m))
-print(fast_sort_hoare(m))
+# print(fast_sort_hoare(m))
 # print(insert_sort(m))
-# print(select_sort(m))
+print(select_sort(m))
 # print(bubble_sort(m))
 

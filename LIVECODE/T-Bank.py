@@ -79,6 +79,7 @@ def func(d: dict) -> dict:
             new_d[v] = k
         except:
             pass
+
     return new_d
 
 
@@ -183,9 +184,9 @@ class MyIterator:
             raise StopIteration
 
 # Использование итератора
-my_iter = MyIterator(5)
-for num in my_iter:
-    print(num)
+# my_iter = MyIterator(5)
+# for num in my_iter:
+#     print(num)
 
 '''
  - ГЕНЕРАТОРЫ - может означать либо функцию-генератор, 
@@ -215,7 +216,7 @@ send(value) – продолжает выполнение и отправляе�
 '''
 
 
-# реализовать и аннотировать геннератор, на вход итерируемы обьект,
+# реализовать и аннотировать генератор, на вход итерируемы обьект,
 # результат- бесконечное повторение значений
 
 from typing import Iterator, Any
@@ -280,7 +281,7 @@ def f(s):
 # f(1)  #   INFO:root:f(1): 1.0 sec
 
 
-# 2
+# 2 ttl
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -360,10 +361,12 @@ coroutine, Task, Future
 
 coroutine - обьект корорый умеет хранить состояние и может передавать управление
 частный случай генератора (old - yield from)
-async def - определение асинхронной функции, которая возвращает coroutine обьект
+async def - определение асинхронной функции, которая возвращает обьект coroutine
 coroutine обьект передается в event loop
 
-event loop - запускается через asyncio.run() ожидая окончания работы  
+event loop - механизм, который управляет выполнением асинхронного кода
+Event Loop постоянно проверяет, произошли ли какие-либо события (например, завершение)
+запускается через asyncio.run() ожидая окончания работы  
 
 task - asyncio.create_task() позволяет запускать задачи в фоне, оборачивает coroutine в Task
 и планирует ее выполнение в event loop на ближайшее время
@@ -409,7 +412,7 @@ class Context:
 
 # алго ###################################################################
 
-#  шахматная ладья
+# шахматная ладья
 m = [
     [1, 2, 3],
     [3, 4, 1],
@@ -447,18 +450,7 @@ n = [
     [1, 0, 1, 1, 1, 1],
     [0, 0, 0, 0, 0, 0]
 ]
-
-
 # -> 6
-
-# [
-#     (1, 0, 1, 0, 1, 0),
-#     (1, 0, 0, 0, 0, 0),
-#     (0, 0, 1, 0, 1, 0),
-#     (0, 0, 0, 0, 1, 0),
-#     (1, 1, 1, 0, 1, 0),
-#     (0, 0, 0, 0, 1, 0)
-# ]
 
 
 def ship(arr: list[list[int]]) -> int:
@@ -473,11 +465,13 @@ def ship(arr: list[list[int]]) -> int:
 
     return count
 
+
 def check(arr, h, v) -> bool:
     if (h > 0 and arr[h-1][v] == 1) or (v > 0 and arr[h][v-1] == 1):
         return False
     else:
         return True
+
 
 # print(ship(n))
 
@@ -486,28 +480,34 @@ def check(arr, h, v) -> bool:
 # состоящие из строчных латинских букв и символов удаления '#'
 # проверить равны ли эти строки с примененными #
 
-a1 = ('ab#c', 'ad#c')    # true
+a1 = ('ab#c', 'ad#d#c')    # true
 b1 = ('#ab##', '#cd##')    # true
 c1 = ('ab#c', 'ac#b')    # false
 
+
 def backspace(a, b) -> bool:
-    new_a = ''
-    new_b = ''
+    new_a = []
+    new_b = []
 
-    for i in range(len(a)):
-        if a[i] != '#':
-            new_a += a[i]
+    for char in a:
+        if char == '#' and new_a:
+            new_a.pop()
+        elif char == '#' and not new_a:
+            continue
         else:
-            new_a = new_a[:-1]
+            new_a.append(char)
 
-        if b[i] != '#':
-            new_b += b[i]
+    for char in b:
+        if char == '#' and new_b:
+            new_b.pop()
+        elif char == '#' and not new_b:
+            continue
         else:
-            new_b = new_b[:-1]
+            new_b.append(char)
 
-    print(new_a == new_b)
+    return new_a == new_b
 
-# backspace(*a1)
+# print(backspace(*a1))
 # backspace(*b1)
 # backspace(*c1)
 
@@ -558,7 +558,7 @@ def bracket(arr):
     elif len(closes) == 0:
         return opens[1::2]
 
-#
+
 # for i in range(len(q)):
 #     print(f'{i}:  ', end='')
 #     print(bracket(q[i]))
@@ -587,18 +587,22 @@ import re
 
 def expand_expression(s):
     # Определите функцию для обработки вложенных выражений
+
     def expand(match):
         count = int(match.group(1))
         content = match.group(2)
         return count * process(content)
 
     # Рекурсивная функция для обработки строки
+
     def process(substring):
         # Обрабатываем вложенные круглые скобки от самых внутренних до самых внешних
+
         while '(' in substring:
             substring = re.sub(r'(\d+)\(([^()]+)\)', expand, substring)
 
         # Замените оставшиеся числовые повторы простым расширением
+
         substring = re.sub(r'(\d+)([A-Z])', lambda m: int(m.group(1)) * m.group(2), substring)
         return substring
 
@@ -606,17 +610,105 @@ def expand_expression(s):
 
 
 # Test cases
-if __name__ == "__main__":
-    test_cases = [
-        ("3AB2(Z3K)", "AAABZKKKZKKK"),
-        ("2(Z3(KA))", "ZKAKAZKAKAKA"),
-        ("4(A2(B3(C)))", "ABCCCBCCCBCCCBCCCBCCCBCCCBCCC"),
-        ("1(A)3(B2(C))", "ABCCBCCBCC"),
-    ]
+test_cases = [
+    ("3AB2(Z3K)", "AAABZKKKZKKK"),
+    ("2(Z3(KA))", "ZKAKAZKAKAKA"),
+    ("4(A2(B3(C)))", "ABCCCBCCCBCCCBCCCBCCCBCCCBCCC"),
+    ("1(A)3(B2(C))", "ABCCBCCBCC"),
+]
 
-    for expression, expected in test_cases:
-        result = expand_expression(expression)
-        print(f"Expression: {expression}\nExpected: {expected}\nResult:   {result}\n")
-        # assert result == expected, f"Test failed for expression {expression}"
+# for expression, expected in test_cases:
+#     result = expand_expression(expression)
+#     print(f"Expression: {expression}\nExpected: {expected}\nResult:   {result}\n")
+#     # assert result == expected, f"Test failed for expression {expression}"
 
-    print("All tests passed!")
+# print("All tests passed!")
+
+
+class Node:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+node4 = Node(4)
+node7 = Node(7)
+node13 = Node(13)
+node1 = Node(1)
+node6 = Node(6, node4, node7)
+node14 = Node(14, node13)
+node3 = Node(3, node1, node6)
+node10 = Node(10, None, node14)
+root = Node(8, node3, node10)
+'''
+      8
+    /   \ 
+    3    10 
+   / \    \ 
+  1   6    14
+     / \  / 
+     4 7 13 
+
+q = [8,3,10,1,6,Null,14,Null,4,7,13,Null] 
+'''
+
+# Дано дерево, нужно найти N-ный максимальный элемент
+# target 5 = 7
+
+
+def serch_n_max_val(root, target):
+    values = []
+
+    def in_order(node):
+        if not node:
+            return
+        in_order(node.left)
+        values.append(node.val)
+        in_order(node.right)
+
+    in_order(root)
+    # if n > len(values):
+    #     raise ValueError("N превышает количество элементов")
+    print(values)
+    if target > len(values):
+        raise ValueError('Target > количества элементов')
+    return values[target-1]
+
+
+# print(serch_n_max_val(root, 5))
+
+# Дано два массива n и m,
+# нужно найти минимальное расстояние между его элементами
+# сортировка и два указателя
+
+n1 = [4, 5, 3, 5, 20]
+m1 = [6, 11, 7, 10]
+
+# sort
+# [3, 4, 5, 5, 20]
+# [6, 7, 10, 11]
+
+
+def min_distance(n: list, m: list):
+    n.sort()
+    m.sort()
+
+    i, j = 0, 0
+
+    min_dist = float('inf')
+
+    while i < len(n) and j < len(m):
+        curr_dist = abs(n[i] - m[j])
+        if curr_dist < min_dist:
+            min_dist = curr_dist
+
+        if n[i] < m[j]:
+            i += 1
+        else:
+            j += 1
+
+    return min_dist
+
+
+print(min_distance(n1,m1))
