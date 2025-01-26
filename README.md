@@ -1,22 +1,4 @@
-# Заголовок первого уровня
-## Заголовок второго уровня
-### Заголовок третьего уровня
-#### Заголовок четвёртого уровня
-##### Заголовок пятого уровня
-###### Заголовок шестого уровня
 
-
-Выделение текста
-*курсив*  
-_курсив_
-
-**жирный**  
-__жирный__
-
-***жирный курсив***  
-___жирный курсив___
-
-~~зачеркнутый~~
 
 ## Сортировки
 + [bubble sort](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/Sorted.pyL#58)
@@ -59,7 +41,6 @@ ___жирный курсив___
 + [По прямому(сверху слева)](55)
 + [По центру(слева снизу)](33)
 + [По обратному(снизу слева)](44)
----
 + [Обход в ширину](66)
 + [Сумма уровней циклом](82)
 + [Сумма уровней рекурсивно](111)
@@ -72,10 +53,9 @@ ___жирный курсив___
 + [скобки. проверить и вывести индексы какие скобок поменять](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/LIVECODE/T-Bank.py#L516)
 + [2(Z3(KA)) -> ZKAKAKAZKAKAKA](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/LIVECODE/T-Bank.py#L578)
 + [найти минимальное расстояние между элементами списков](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/LIVECODE/T-Bank.py#L681)
-+ 
+
 ### Деревья
 + [найти N-ный максимальный элемент](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/LIVECODE/T-Bank.py#L656)
-+ []()
 + []()
 
 ### Простые
@@ -87,5 +67,4 @@ ___жирный курсив___
 + [удалить все елементы на нечетных позициях](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/exemples/remove_odd_items_from_list.py)
 
 ### Декораторы
-+ []()
 + []()
