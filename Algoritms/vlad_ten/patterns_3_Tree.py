@@ -109,25 +109,23 @@ def norec_average_level(root):
 
 
 def rec_average_level(root):
-    q = []
-    res = []
-    sum_l = 0
-    q.append(root)
-    while (len(q) > 0):
-        print(q[0].val)
-        node = q.pop(0)
-        sum_l += node.val
+    result = []
 
-        if node.left is not None:
-            q.append(node.left)
-        if node.right is not None:
-            q.append(node.right)
-        res.append(sum_l / len(q))
+    def dfs(node, level):
+        if not node:
+            return
+        if level >= len(result):
+            result.append(0)
+        result[level] += node.val
 
-    return res
+        dfs(node.left, level + 1)
+        dfs(node.right, level + 1)
+
+    dfs(root, 0)
+    return result
 
 
-# print(rec_average_level(root))
+print(rec_average_level(root))
 
 
 

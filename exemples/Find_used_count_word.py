@@ -11,3 +11,25 @@ def used_count_word(s: str):
     return c.most_common(1)[0][0]
 
 print(used_count_word(l))
+
+
+def sample_find_word(s: str):
+    dct = {}
+    lst = s.split()
+    for i in lst:
+        if i not in dct.keys():
+            dct[i] = 1
+        else:
+            dct[i] += 1
+
+    max_word = ''
+    count = 0
+    for k, v in dct.items():
+        if v > count:
+            max_word = ''
+            count = v
+            max_word = k
+
+    return max_word
+
+print(sample_find_word(l))
