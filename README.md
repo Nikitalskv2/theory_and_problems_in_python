@@ -29,21 +29,30 @@
 ### 2
 + [Поиск цикла в связном списке](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L1)
 + [Вернуть середину связного списка](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L54)
-+ [Развернуть связный список](97)
-+ [Палиндром связный список](143)
-+ [Удалить узелы по значению](204)
-+ [Удалить дубликаты в связном списке](258)
-+ [Соединить два сортированных связных списка](305)
-+ [Meeting Rooms. Пересечения созвонов](348)
++ [Развернуть связный список](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L97)
++ [Палиндром связный список](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L143)
++ [Удалить узелы по значению](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L204)
++ [Удалить дубликаты в связном списке](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L258)
++ [Соединить два сортированных связных списка](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L305)
++ [Meeting Rooms. Пересечения созвонов](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_2.py#L348)
 
 ### 3 Деревья
 ##### Обходы деревьев
-+ [По прямому(сверху слева)](55)
-+ [По центру(слева снизу)](33)
-+ [По обратному(снизу слева)](44)
-+ [Обход в ширину](66)
-+ [Сумма уровней циклом](82)
-+ [Сумма уровней рекурсивно](111)
++ [По прямому(сверху слева)](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L55)
++ [По центру(слева снизу)](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L33)
++ [По обратному(снизу слева)](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L44)
++ [Обход в ширину](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L66)
++ [Среднее арифметическое уровней циклом](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L82)
++ [Сумма уровней рекурсивно](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L111)
++ [Найти минимальную глубину](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L137)
++ [Сравнить два одинаковых дерева](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L179)
++ [Рекурсивное сравнение деревьев](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L206)
++ [Сумма путей и таргет](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L224)
++ [Найти максимальный диаметр (от листа к листу)](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L238)
++ [Соединить два дерева](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L284)
++ [Cамый длинный путь](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L305)
++ [Найти общего предка](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L322)
++ [Поиск поддерева](https://github.com/Nikitalskv2/theory_and_problems_in_python/blob/master/Algoritms/vlad_ten/patterns_3_Tree.py#L356)
 
 
 ## Алго задачи с собесов
